@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="Create table TodoItem" author="tssudakov">
+        <createTable tableName="TodoItem" remarks="Задача">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="title" type="text" remarks="Наименование задачи">
+                <constraints nullable="false"/>
+            </column>
+            <column name="completed" type="boolean" remarks="Чекмарк выполненной задачи">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="date" remarks="Дата создания">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
